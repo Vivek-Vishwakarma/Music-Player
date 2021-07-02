@@ -1,0 +1,117 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body{
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    background: linear-gradient(red,blue);
+}
+.container{
+    background: mediumseagreen;
+    border-radius: 20px;
+    box-shadow: 0px 20px 20px #8fffe7;
+    display: flex;
+    padding: 20px 20px;
+    position: relative;
+    margin:75px 0px;
+    z-index: 10;
+}
+.image{
+    position: relative;
+    width: 100px;
+}
+.image::after{
+    content: "";
+    background: white;
+    height: 20px;
+    width: 20px;
+    position: absolute;
+    border-radius: 50%;
+    left: 50%;
+    bottom: 60%;
+    transform: translate(-50%, -50%);
+}
+.image img{
+    height: 100px;
+    width: inherit;
+    border-radius: 50%;
+    object-fit: cover;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    animation: animate 3s linear infinite;
+
+    animation-play-state: paused;
+}
+.play img{
+    animation-play-state: running;
+}
+@keyframes animate {
+    0%{
+        transform: rotate(0deg);
+    }
+    100%{
+        transform: rotate(360deg);
+    }
+    
+}
+.nav{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 1;
+}
+.btn{
+    border: none;
+    background: mediumseagreen;
+    columns: black;
+    font-size: 20px;
+    cursor: pointer;
+    padding: 10px;
+    margin: 0px 20px;
+}
+.btn:focus{
+    outline: none;
+}
+#play{
+    font-size: 22px;
+    color: white;
+}
+h4{
+    margin: 0;
+}
+.info{
+    background: mediumseagreen;
+    border-radius: 20px;
+    position: absolute;
+    top: 0;
+    left: 0px;
+    opacity: 0;
+    width: 100%;
+    padding: 10px 10px 10px 150px;
+    transform: translateY(0%);
+    transition: transform 0.3s ease-in, opacity 0.3s ease-in;
+}
+.play .info{
+    opacity: 1;
+    transform: translateY(-100%);
+}
+.progress{
+    background: white;
+    margin: 10px 0px;
+    height: 5px;
+    border-radius: 5px;
+    width: 100%
+}
+.progress-id{
+    background: black;
+    border-radius: 5px;
+    height: 100%;
+    width: 0;
+    transition: width 0.1s linear;
+}

@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" referrerpolicy="no-referrer" />
+    <title>Music Player</title>
+</head>
+<body>
+    <h1>V3 Music Player</h1>
+    <div class="container" id="container">
+        <div class="info">
+            <h4 id="title">Faded</h4>
+            <div class="progress">
+                <div class="progress-id"></div>
+            </div>
+        </div>
+        <audio id="audio" src="music/payphone.mp3"></audio>
+        <div class="image">
+            <img id="cover-img" src="images/faded.png">
+        </div>
+        <div class="nav">
+            <button id="backward" class="btn">
+                <i class="fas fa-step-backward"></i>
+            </button>
+            <button id="play" class="btn">
+                <i class="fas fa-play"></i>
+            </button>
+            <button id="forward" class="btn">
+                <i class="fas fa-step-forward"></i>
+            </button>
+        </div>
+    </div>
+</body>
+
+<script src="script.js"></script>
+</html>
