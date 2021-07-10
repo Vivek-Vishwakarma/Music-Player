@@ -1,12 +1,12 @@
 const play = document.querySelector('#play')
-const back = document.querySelector('#backward')
-const next = document.querySelector('#forward')
+const back = document.getElementById('backward')
+const next = document.getElementById('forward')
 const container = document.getElementById('container')
 const audio = document.querySelector('#audio')
 const title = document.querySelector('#title')
-const cover =  document.getElementById('cover-img')
+const cover =  document.getElementById('cover')
 
-const songs = ["faded", "payphone"]
+const songs = ["faded", "payphone", "mushoku"]
 
 let songInd = 0;
 
@@ -15,7 +15,7 @@ load(songs[songInd])
 function load(song){
     title.innerHTML = song;
     audio.src = `music/${song}.mp3`
-    cover.scr = `images/${song}.png`
+    cover.src = `images/${song}.jpg`
 }
 
 function playSong(){
@@ -28,6 +28,23 @@ function pauseSong(){
     play.innerHTML = '<i class="fas fa-play"></i>'
     audio.pause()
 }
+function nextSong(){
+    songInd++
+    if(songInd > (songs.length-1)){
+        songInd = 0
+    }
+    load(songs[songInd])
+    playSong()
+}
+function prevSong(){
+    songInd--
+    if(songInd < 0){
+        songInd = (songs.length-1)
+    }
+    load(songs[songInd])
+    playSong()
+}
+
 play.addEventListener("click", () => {
     const playing = container.classList.contains('play')
 
@@ -38,3 +55,6 @@ play.addEventListener("click", () => {
         playSong()
     }
 })
+
+next.addEventListener("click", nextSong)
+back.addEventListener("click", prevSong)
