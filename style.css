@@ -84,6 +84,7 @@ body{
 }
 h4{
     margin: 0;
+    font-size: 22px;
 }
 .info{
     background: mediumseagreen;
@@ -104,12 +105,13 @@ h4{
 .progress{
     background: white;
     margin: 10px 0px;
-    height: 5px;
+    height: 7px;
     border-radius: 5px;
     width: 100%
 }
 .progress-id{
     background: black;
+    color: black;
     border-radius: 5px;
     height: 100%;
     width: 0;
